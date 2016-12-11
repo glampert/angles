@@ -45,7 +45,12 @@
 //   types such as float, double and long double.
 //
 
+// Need this define to get M_PI on Visual Studio
+#if defined(_MSC_VER) && !defined(_USE_MATH_DEFINES)
+#define _USE_MATH_DEFINES 1
+#endif // _MSC_VER
 #include <cmath>
+
 #ifdef ANGLES_ASSERT_360_RANGE
 #include <cassert>
 #endif // ANGLES_ASSERT_360_RANGE
